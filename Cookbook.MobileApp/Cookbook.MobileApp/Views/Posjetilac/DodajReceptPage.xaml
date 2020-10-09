@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+            xmlns:converters="clr-namespace:Cookbook.MobileApp.Converter" 
+             xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
+               x:Class="Cookbook.MobileApp.Views.Posjetilac.DodajReceptPage"
+            Title="Dodaj recept" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:DodajReceptPosjetiocViewModel>
+        </viewModel:DodajReceptPosjetiocViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv">
+            </converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0"  HorizontalOptions="FillAndExpand" 
+                         VerticalOptions="CenterAndExpand" x:Name="prviPage" IsVisible="true" Padding="5">
+                <Label Text="Naziv"></Label>
+                <Entry x:Name="Naziv" Text="{Binding Naziv}"></Entry>
+
+                <Label Text="Slozenost"></Label>
+                <Picker x:Name="SlozenostPicker" ItemsSource="{Binding SlozenostList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+
+                <Label Text="Grupa jela"></Label>
+                <Picker x:Name="GrupaJelaPicker" ItemsSource="{Binding GrupaJelaList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+
+                <Label Text="Kategorija"></Label>
+                <Picker x:Name="KategorijaPicker" ItemsSource="{Binding KategorijaList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+            </StackLayout>
+
+            <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="5" x:Name="drugiPage" IsVisible="false">
+                <Label Text="Tekst"></Label>
+                <Entry x:Name="Tekst" Text="{Binding Tekst}"></Entry>
+
+                <Label Text="Datum i vrijeme objave"></Label>
+                <DatePicker x:Name="DatumObjave" IsEnabled="True"></DatePicker>
+
+                <Label Text="Vrijeme kuhanja"></Label>
+                <Entry x:Name="VrijemeKuhanja" Text="{Binding VrijemeKuhanja}"></Entry>
+
+                <Label Text="Vrijeme pripreme"></Label>
+                <Entry x:Name="VrijemePripreme" Text="{Binding VrijemePripreme}"></Entry>
+            </StackLayout>
+            <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="5" x:Name="treciPage" IsVisible="false">
+                <Label Text="Broj ljudi"></Label>
+                <Entry x:Name="BrojLjudi" Text="{Binding BrojLjudi}"></Entry>
+
+                <Image WidthRequest="300" Source="{Binding Slika, Converter={StaticResource imgConv}}"></Image>
+                <Button Clicked="Button_Clicked_1" Text="Odaberi Sliku"/>
+
+            </StackLayout>
+            <Grid x:Name="cetvrtiPage" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="5" IsVisible="false">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <dg:DataGrid  x:Name="dataGrid" Grid.Row="0" ItemsSource="{Binding ReceptSastojakList}" 
+                             SelectionEnabled="True"  RowHeight="70" HeaderHeight="50"  
+                    BorderColor="#CCCCCC" HeaderBackground="#E0E6F8" PullToRefreshCommand="{Binding RefreshCommand}"
+                             IsRefreshing="{Binding IsRefreshing}" ActiveRowColor="#8899AA" >
+                    <dg:DataGrid.Columns>
+                        <dg:DataGridColumn Title="Sastojak" PropertyName="Sastojak" Width="2*"/>
+                        <dg:DataGridColumn Title="Mjerna jedinica" PropertyName="MjernaJedinica" Width="2*"/>
+                        <dg:DataGridColumn Title="Mjerna kolicina" PropertyName="MjernaKolicina" Width="2*"/>
+
+                    </dg:DataGrid.Columns>
+                    <dg:DataGrid.RowsBackgroundColorPalette>
+                        <dg:PaletteCollection>
+                            <Color>#F2F2F2</Color>
+                            <Color>#FFFFFF</Color>
+                        </dg:PaletteCollection>
+                    </dg:DataGrid.RowsBackgroundColorPalette>
+                </dg:DataGrid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="dodajSastojak" Grid.Column="0" Text="Dodaj sastojak" Clicked="dodajSastojak_Clicked"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray" ></Button>
+                    <Button Clicked="Button_Clicked" Grid.Column="1" HorizontalOptions="FillAndExpand"  Text="Sačuvaj" BackgroundColor="LightGray"></Button>
+                    <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+                </Grid>
+            </Grid>
+            <StackLayout x:Name="petiPage" Grid.Row="0" HorizontalOptions="FillAndExpand" Padding="5" VerticalOptions="CenterAndExpand" IsVisible="false">
+                <Label Text="Mjerna kolicina"></Label>
+                <Picker x:Name="MjernaKolicinaPicker" ItemsSource="{Binding MjernaKolicinaList}" ItemDisplayBinding="{Binding Kolicina}"></Picker>
+                <Label Text="Mjerna jedinica"></Label>
+                <Picker x:Name="MjernaJedinicaPicker" ItemsSource="{Binding MjernaJedinicaList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+                <Label Text="Sastojak"></Label>
+                <Picker x:Name="SastojakPicker" ItemsSource="{Binding SastojakList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+                <Button x:Name="SacuvajSastojak" Text="Sacuvaj sastojak" Clicked="SacuvajSastojak_Clicked"/>
+            </StackLayout>
+            <StackLayout x:Name="finalBtns" Grid.Row="1" IsVisible="True">
+                <Button x:Name="prethodni" Text="Prethodni" IsEnabled="False" Clicked="prethodni_Clicked"/>
+                <Button x:Name="slijedeci" Text="Slijedeci" IsEnabled="True" Clicked="slijedeci_Clicked"/>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

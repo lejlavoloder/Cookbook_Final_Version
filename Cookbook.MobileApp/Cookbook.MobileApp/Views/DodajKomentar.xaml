@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             x:Class="Cookbook.MobileApp.Views.DodajKomentar"
+             Title="Dodaj komentar" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:KomentarViewModel>
+        </viewModel:KomentarViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand">
+                 <Label Text="Sadržaj"></Label>
+                <Entry  x:Name="Sadrzaj" Text="{ Binding Sadrzaj}"></Entry>
+                <Button Clicked="Button_Clicked"  HorizontalOptions="FillAndExpand" Text="Sačuvaj" BackgroundColor="LightGray"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             x:Class="Cookbook.MobileApp.Views.PrikazRegistrovanihPosjetioca"
+             Title="Posjetioci" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:PrikazRegistrovanihPosjetiocaViewModel>
+        </viewModel:PrikazRegistrovanihPosjetiocaViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding PosjetilacList}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Ime posjetioca: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Ime}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Prezime posjetioca: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Prezime}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Email: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Email}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Telefon: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Telefon}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Korisničko ime: "  FontSize="12" ></Label>
+                                <Label Text="{Binding KorisnickoIme}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Broj objavljenih recepata: "  FontSize="12" ></Label>
+                                <Label Text="{Binding BrojObjavljenihRecepata}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

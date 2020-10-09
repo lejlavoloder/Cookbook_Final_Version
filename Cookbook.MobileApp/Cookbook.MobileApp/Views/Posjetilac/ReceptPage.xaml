@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Cookbook.MobileApp.ViewModels"
+             x:Class="Cookbook.MobileApp.Views.Posjetilac.ReceptPage" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <vm:ReceptViewModel>
+        </vm:ReceptViewModel>
+    </ContentPage.BindingContext>
+<ContentPage.Content>
+        <ScrollView>
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand">
+
+                <StackLayout>
+                    <Button Clicked="Button_Clicked" BackgroundColor="LightGray" Text="Pretraga recepata" ></Button>
+                </StackLayout>
+                <StackLayout>
+                    <Button Clicked="Button_Clicked_1" BackgroundColor="LightGray" Text="Prikaz recepata" ></Button>
+                </StackLayout>
+                <StackLayout>
+                    <Button Clicked="Button_Clicked_2" BackgroundColor="LightGray" Text="Dodaj recepat" ></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

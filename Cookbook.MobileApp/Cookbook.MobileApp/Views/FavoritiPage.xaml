@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             x:Class="Cookbook.MobileApp.Views.FavoritiPage"
+             Title="Moji favoriti" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:FavoritiPrikazViewModel>
+        </viewModel:FavoritiPrikazViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding FavoritiList}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Recept}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="18" />
+                                    <Button Clicked="Button_Clicked" Text="Ukloni" CornerRadius="7" HeightRequest="30" WidthRequest="60" Padding="3"
+                                      BackgroundColor="LightGray" HorizontalOptions="Center" VerticalOptions="Center"></Button>
+                                    <Button Clicked="Button_Clicked_1" Text="Prikazi detalje" CornerRadius="7" HeightRequest="30" WidthRequest="100" Padding="3"
+                                   BackgroundColor="LightGray" HorizontalOptions="Center" VerticalOptions="Center"></Button>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

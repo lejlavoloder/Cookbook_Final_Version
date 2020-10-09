@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             x:Class="Cookbook.MobileApp.Views.Posjetilac.ClanakPrikaz"
+             Title="Prikaz članaka" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:ClanakViewModel>
+        </viewModel:ClanakViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding ClanakList}"  RowHeight="240" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Vertical">
+
+                            <Label Text="{Binding Naziv}" FontAttributes="Italic" Font="20"
+                                   HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="{Binding VrstaClanka, StringFormat='Vrsta članka: {0}'}" 
+                                           LineBreakMode="NoWrap"
+                                        HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Datum i vrijeme objave: "  FontSize="12" ></Label>
+                                <Label Text="{Binding DatumObjave}" 
+                                           LineBreakMode="NoWrap"
+                                            HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"
+                                           FontSize="13" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Tekst}" 
+                                           LineBreakMode="WordWrap"
+                                              FontSize="14" />
+                            </StackLayout>
+                            <StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

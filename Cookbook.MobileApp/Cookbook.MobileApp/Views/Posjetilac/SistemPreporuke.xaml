@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             x:Class="Cookbook.MobileApp.Views.Posjetilac.SistemPreporuke"
+             xmlns:converters="clr-namespace:Cookbook.MobileApp.Converter"
+             Title="Preporučeni recepti" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:SistemPreporukeViewModel>
+        </viewModel:SistemPreporukeViewModel>
+    </ContentPage.BindingContext>  
+    <ContentPage.Resources>
+            <ResourceDictionary>
+                <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+            </ResourceDictionary>
+        </ContentPage.Resources>
+    <ContentPage.Content>
+    
+        <StackLayout Padding="10">
+            <Label Text="Preporučeni recepti za Vas su:" FontSize="25" FontAttributes="Italic"/>
+            <ListView ItemsSource="{Binding ReceptList}" ItemSelected="ListView_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                           
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical">
+                                    <Image WidthRequest="300" HeightRequest="280"
+                                       Source="{Binding Slika, Converter={StaticResource imgConv}}"></Image>
+                                    <StackLayout Orientation="Horizontal">
+                                       
+                                        <Label Text="{Binding Naziv}"                                            
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="18" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Vrijeme pripreme u minutama:      " FontSize="14"/>
+                                        <Label Text="{Binding VrijemePripreme}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="14" />
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

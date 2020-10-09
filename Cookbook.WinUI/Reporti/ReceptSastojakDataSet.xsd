@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReceptSastojakDataSet" targetNamespace="http://tempuri.org/ReceptSastojakDataSet.xsd" xmlns:mstns="http://tempuri.org/ReceptSastojakDataSet.xsd" xmlns="http://tempuri.org/ReceptSastojakDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CookbookConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CookbookConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Cookbook.WinUI.Properties.Settings.GlobalReference.Default.CookbookConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblReceptSastojakTableAdapter" GeneratorDataComponentClassName="tblReceptSastojakTableAdapter" Name="tblReceptSastojak" UserDataComponentName="tblReceptSastojakTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CookbookConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MjernaKolicina.Kolicina, MjernaJedinica.Naziv AS MjernaJedinica, Sastojak.Naziv AS Sastojak
+FROM     ReceptSastojak INNER JOIN
+                  MjernaKolicina ON ReceptSastojak.MjernaKolicinaId = MjernaKolicina.MjernaKolicinaId INNER JOIN
+                  MjernaJedinica ON ReceptSastojak.MjernaJedinicaId = MjernaJedinica.MjernaJedinicaId INNER JOIN
+                  Sastojak ON ReceptSastojak.SastojakId = Sastojak.SastojakId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Kolicina" DataSetColumn="Kolicina" />
+              <Mapping SourceColumn="MjernaJedinica" DataSetColumn="MjernaJedinica" />
+              <Mapping SourceColumn="Sastojak" DataSetColumn="Sastojak" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReceptSastojakDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReceptSastojakDataSet" msprop:Generator_UserDSName="ReceptSastojakDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblReceptSastojak" msprop:Generator_TableClassName="tblReceptSastojakDataTable" msprop:Generator_TableVarName="tabletblReceptSastojak" msprop:Generator_TablePropName="tblReceptSastojak" msprop:Generator_RowDeletingName="tblReceptSastojakRowDeleting" msprop:Generator_RowChangingName="tblReceptSastojakRowChanging" msprop:Generator_RowEvHandlerName="tblReceptSastojakRowChangeEventHandler" msprop:Generator_RowDeletedName="tblReceptSastojakRowDeleted" msprop:Generator_UserTableName="tblReceptSastojak" msprop:Generator_RowChangedName="tblReceptSastojakRowChanged" msprop:Generator_RowEvArgName="tblReceptSastojakRowChangeEvent" msprop:Generator_RowClassName="tblReceptSastojakRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Kolicina" msprop:Generator_ColumnVarNameInTable="columnKolicina" msprop:Generator_ColumnPropNameInRow="Kolicina" msprop:Generator_ColumnPropNameInTable="KolicinaColumn" msprop:Generator_UserColumnName="Kolicina" type="xs:double" />
+              <xs:element name="MjernaJedinica" msprop:Generator_ColumnVarNameInTable="columnMjernaJedinica" msprop:Generator_ColumnPropNameInRow="MjernaJedinica" msprop:Generator_ColumnPropNameInTable="MjernaJedinicaColumn" msprop:Generator_UserColumnName="MjernaJedinica" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sastojak" msprop:Generator_ColumnVarNameInTable="columnSastojak" msprop:Generator_ColumnPropNameInRow="Sastojak" msprop:Generator_ColumnPropNameInTable="SastojakColumn" msprop:Generator_UserColumnName="Sastojak" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

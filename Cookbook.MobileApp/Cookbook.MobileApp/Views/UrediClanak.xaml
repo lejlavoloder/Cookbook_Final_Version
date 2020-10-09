@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Cookbook.MobileApp.Views.UrediClanak"
+             Title="Uredi članak" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:UrediClanakViewModel>
+        </viewModel:UrediClanakViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout>
+                <Label Text="Naziv"></Label>
+                <Entry x:Name="Naziv" Text="{Binding clanak.Naziv}"></Entry>
+                <Label Text="Tekst"></Label>
+                <Entry x:Name="Tekst" Text="{Binding clanak.Tekst}" ></Entry>
+                <Label Text="Datum i vrijeme objave"></Label>
+                <DatePicker x:Name="DatumObjave" Date="{Binding clanak.DatumObjave}"></DatePicker>
+                <Label Text="Vrsta članka"></Label>
+                <Picker x:Name="VrstaClanka" ItemsSource="{Binding VrstaClankaList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Sačuvaj" Clicked="Button_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

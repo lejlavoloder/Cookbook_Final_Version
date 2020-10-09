@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Cookbook.MobileApp.Views.UrediProfilPage"
+             Title="Korisnički profil" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:KorisnickiProfilViewModel>
+        </viewModel:KorisnickiProfilViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <StackLayout>
+                    <Label Text="Uredi profil" HorizontalOptions="CenterAndExpand" FontSize="Medium"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label  Text="Ime"></Label>
+                    <Entry x:Name="Ime" Text="{Binding korisnik.Ime}"></Entry>
+                    <Label  Text="Prezime"></Label>
+                    <Entry x:Name="Prezime" Text="{Binding korisnik.Prezime}"></Entry>
+                    <Label  Text="Telefon"></Label>
+                    <Entry x:Name="Telefon" Text="{Binding korisnik.Telefon}"></Entry>
+                    <Label  Text="Email"></Label>
+                    <Entry x:Name="Email" Text="{Binding korisnik.Email}"></Entry>
+                    <Label  Text="Korisnicko ime"></Label>
+                    <Entry x:Name="KorisnickoIme" Text="{Binding korisnik.KorisnickoIme}"></Entry>
+                    <Label  Text="Password"></Label>
+                    <Entry x:Name="Password"  Placeholder="Nova ili stara lozinka" IsPassword="True"></Entry>
+                    <Label  Text="Potvrda passworda"></Label>
+                    <Entry x:Name="PasswordPotvrda" Placeholder="Potvrda lozinke" IsPassword="True"></Entry>
+                </StackLayout>
+                <StackLayout>
+                    <Button Text="Sačuvaj " Clicked="Button_Clicked"  BackgroundColor="LightGray"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

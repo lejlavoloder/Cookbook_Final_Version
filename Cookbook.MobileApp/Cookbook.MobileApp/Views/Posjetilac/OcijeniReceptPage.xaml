@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             x:Class="Cookbook.MobileApp.Views.Posjetilac.OcijeniReceptPage" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:OcijeniReceptViewModel>
+        </viewModel:OcijeniReceptViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Ocjena"></Label>
+            <Entry  x:Name="Ocjena" Text="{ Binding Ocjena}"></Entry>
+
+            <Button Clicked="Button_Clicked" Text="Sačuvaj" CornerRadius="7" HeightRequest="30" WidthRequest="80" Padding="3" 
+                        BackgroundColor="LightGray" HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

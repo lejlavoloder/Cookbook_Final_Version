@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6405FE1-457A-4C0A-9E3A-0538210F4B56}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Cookbook.WinUI</RootNamespace>
+    <AssemblyName>Cookbook.WinUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Flurl, Version=2.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.2.8.2\lib\net40\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.Http.2.4.2\lib\net46\Flurl.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.6\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.6\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.6\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.6\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.6\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIService.cs" />
+    <Compile Include="Clanak\frmClanak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clanak\frmClanak.Designer.cs">
+      <DependentUpon>frmClanak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clanak\frmClanakDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clanak\frmClanakDetalji.Designer.cs">
+      <DependentUpon>frmClanakDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokumenti\frmDokument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokumenti\frmDokument.Designer.cs">
+      <DependentUpon>frmDokument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokumenti\frmDokumentDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokumenti\frmDokumentDetalji.Designer.cs">
+      <DependentUpon>frmDokumentDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Favoriti\frmFavoriti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Favoriti\frmFavoriti.Designer.cs">
+      <DependentUpon>frmFavoriti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Favoriti\frmFavoritiDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Favoriti\frmFavoritiDetalji.Designer.cs">
+      <DependentUpon>frmFavoritiDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIndex.Designer.cs">
+      <DependentUpon>frmIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrupaJela\frmGrupaJela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrupaJela\frmGrupaJela.Designer.cs">
+      <DependentUpon>frmGrupaJela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrupaJela\frmGrupaJelaDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrupaJela\frmGrupaJelaDetalji.Designer.cs">
+      <DependentUpon>frmGrupaJelaDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kategorija\frmKategorija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kategorija\frmKategorija.Designer.cs">
+      <DependentUpon>frmKategorija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kategorija\frmKategorijaDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kategorija\frmKategorijaDetalji.Designer.cs">
+      <DependentUpon>frmKategorijaDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MjernaJedinica\frmMjernaJedinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MjernaJedinica\frmMjernaJedinica.Designer.cs">
+      <DependentUpon>frmMjernaJedinica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MjernaJedinica\frmMjernaJedinicaDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MjernaJedinica\frmMjernaJedinicaDetalji.Designer.cs">
+      <DependentUpon>frmMjernaJedinicaDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MjernaKolicina\frmMjernaKolicina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MjernaKolicina\frmMjernaKolicina.Designer.cs">
+      <DependentUpon>frmMjernaKolicina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MjernaKolicina\frmMjernaKolicinaDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MjernaKolicina\frmMjernaKolicinaDetalji.Designer.cs">
+      <DependentUpon>frmMjernaKolicinaDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Posjetitelj\frmPosjetitelj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Posjetitelj\frmPosjetitelj.Designer.cs">
+      <DependentUpon>frmPosjetitelj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Posjetitelj\frmPosjetiteljDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Posjetitelj\frmPosjetiteljDetalji.Designer.cs">
+      <DependentUpon>frmPosjetiteljDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Recept\frmDetaljiRecepta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recept\frmDetaljiRecepta.Designer.cs">
+      <DependentUpon>frmDetaljiRecepta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recept\frmDodajSastojak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recept\frmDodajSastojak.Designer.cs">
+      <DependentUpon>frmDodajSastojak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recept\frmReceptPretraga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recept\frmReceptPretraga.Designer.cs">
+      <DependentUpon>frmReceptPretraga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recept\frmDodajRecept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recept\frmDodajRecept.Designer.cs">
+      <DependentUpon>frmDodajRecept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recept\frmUrediSastojak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recept\frmUrediSastojak.Designer.cs">
+      <DependentUpon>frmUrediSastojak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporti\ReceptSastojakDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceptSastojakDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reporti\ReceptSastojakForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporti\ReceptSastojakForm.Designer.cs">
+      <DependentUpon>ReceptSastojakForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sastojak\frmSastojak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sastojak\frmSastojak.Designer.cs">
+      <DependentUpon>frmSastojak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sastojak\frmSastojakDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sastojak\frmSastojakDetalji.Designer.cs">
+      <DependentUpon>frmSastojakDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Slozenost\frmSlozenost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Slozenost\frmSlozenost.Designer.cs">
+      <DependentUpon>frmSlozenost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Slozenost\frmSlozenostDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Slozenost\frmSlozenostDetalji.Designer.cs">
+      <DependentUpon>frmSlozenostDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="VrstaClanka\frmVrstaClanka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VrstaClanka\frmVrstaClanka.Designer.cs">
+      <DependentUpon>frmVrstaClanka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VrstaClanka\frmVrstaClankaDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VrstaClanka\frmVrstaClankaDetalji.Designer.cs">
+      <DependentUpon>frmVrstaClankaDetalji.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Clanak\frmClanak.resx">
+      <DependentUpon>frmClanak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clanak\frmClanakDetalji.resx">
+      <DependentUpon>frmClanakDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokumenti\frmDokument.resx">
+      <DependentUpon>frmDokument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokumenti\frmDokumentDetalji.resx">
+      <DependentUpon>frmDokumentDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Favoriti\frmFavoriti.resx">
+      <DependentUpon>frmFavoriti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Favoriti\frmFavoritiDetalji.resx">
+      <DependentUpon>frmFavoritiDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIndex.resx">
+      <DependentUpon>frmIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrupaJela\frmGrupaJela.resx">
+      <DependentUpon>frmGrupaJela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrupaJela\frmGrupaJelaDetalji.resx">
+      <DependentUpon>frmGrupaJelaDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kategorija\frmKategorija.resx">
+      <DependentUpon>frmKategorija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kategorija\frmKategorijaDetalji.resx">
+      <DependentUpon>frmKategorijaDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MjernaJedinica\frmMjernaJedinica.resx">
+      <DependentUpon>frmMjernaJedinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MjernaJedinica\frmMjernaJedinicaDetalji.resx">
+      <DependentUpon>frmMjernaJedinicaDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MjernaKolicina\frmMjernaKolicina.resx">
+      <DependentUpon>frmMjernaKolicina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MjernaKolicina\frmMjernaKolicinaDetalji.resx">
+      <DependentUpon>frmMjernaKolicinaDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Posjetitelj\frmPosjetitelj.resx">
+      <DependentUpon>frmPosjetitelj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Posjetitelj\frmPosjetiteljDetalji.resx">
+      <DependentUpon>frmPosjetiteljDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recept\frmDetaljiRecepta.resx">
+      <DependentUpon>frmDetaljiRecepta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recept\frmDodajSastojak.resx">
+      <DependentUpon>frmDodajSastojak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recept\frmReceptPretraga.resx">
+      <DependentUpon>frmReceptPretraga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recept\frmDodajRecept.resx">
+      <DependentUpon>frmDodajRecept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recept\frmUrediSastojak.resx">
+      <DependentUpon>frmUrediSastojak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporti\ReceptSastojakForm.resx">
+      <DependentUpon>ReceptSastojakForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporti\ReceptSastojakReport.rdlc" />
+    <EmbeddedResource Include="Sastojak\frmSastojak.resx">
+      <DependentUpon>frmSastojak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sastojak\frmSastojakDetalji.resx">
+      <DependentUpon>frmSastojakDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Slozenost\frmSlozenost.resx">
+      <DependentUpon>frmSlozenost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Slozenost\frmSlozenostDetalji.resx">
+      <DependentUpon>frmSlozenostDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VrstaClanka\frmVrstaClanka.resx">
+      <DependentUpon>frmVrstaClanka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VrstaClanka\frmVrstaClankaDetalji.resx">
+      <DependentUpon>frmVrstaClankaDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Cookbook.Model.Recept.datasource" />
+    <None Include="Properties\DataSources\Cookbook.Model.ReceptSastojak.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reporti\ReceptSastojakDataSet.xsc">
+      <DependentUpon>ReceptSastojakDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reporti\ReceptSastojakDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReceptSastojakDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reporti\ReceptSastojakDataSet.xss">
+      <DependentUpon>ReceptSastojakDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cookbook.Model\Cookbook.Model.csproj">
+      <Project>{5369575d-2ba0-4d79-badc-73caa19c4f71}</Project>
+      <Name>Cookbook.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

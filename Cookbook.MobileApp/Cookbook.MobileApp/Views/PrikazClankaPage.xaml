@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Cookbook.MobileApp.Views.PrikazClankaPage"
+             Title="Prikaz članaka" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:ClanakViewModel>
+        </viewModel:ClanakViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding ClanakList}"  RowHeight="280" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Vertical">
+
+                            <Label Text="{Binding Naziv}" FontAttributes="Italic" Font="20"
+                                   HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="{Binding VrstaClanka}" 
+                                           LineBreakMode="NoWrap"
+                                        HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Datum i vrijeme objave: "  FontSize="12" ></Label>
+                                <Label Text="{Binding DatumObjave}" 
+                                           LineBreakMode="NoWrap"
+                                            HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"
+                                           FontSize="13" />
+                            </StackLayout>
+                           <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Tekst}" 
+                                           LineBreakMode="WordWrap"
+                                              FontSize="14" />
+                            </StackLayout>
+                            <StackLayout>
+
+
+
+                                <Button Clicked="Button_Clicked" Text="Uredi" CornerRadius="7" 
+                                        HeightRequest="30" WidthRequest="60" Padding="3"  BackgroundColor="LightGray" HorizontalOptions="EndAndExpand"></Button>
+                            </StackLayout>
+                            <StackLayout>
+
+
+
+                                <Button Clicked="Button_Clicked_1" Text="Obrisi" CornerRadius="7" 
+                                        HeightRequest="30" WidthRequest="60" Padding="3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand"></Button>
+                            </StackLayout>
+                        </StackLayout>
+                 
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

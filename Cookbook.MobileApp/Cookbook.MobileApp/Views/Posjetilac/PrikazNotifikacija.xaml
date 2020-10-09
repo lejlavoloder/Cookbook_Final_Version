@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Cookbook.MobileApp.Views.Posjetilac.PrikazNotifikacija"
+             Title="Prikaz obavijesti" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:NotifikacijaViewModel>
+        </viewModel:NotifikacijaViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+
+            <ListView ItemsSource="{Binding NotifikacijaList}" ItemSelected="ListView_ItemSelected"   >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Recept}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                FontSize="16" />
+                                <Label Text="{Binding Sadrzaj}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                FontSize="16" />
+                                <Label Text="{Binding DatumSlanja}" 
+                                d:Text="Item descripton"
+                                LineBreakMode="NoWrap"
+                                FontSize="13" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

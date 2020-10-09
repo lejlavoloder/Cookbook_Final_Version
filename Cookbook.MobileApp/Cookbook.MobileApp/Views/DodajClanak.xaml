@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Cookbook.MobileApp.Views.DodajClanak"
+             Title="Dodaj članak" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:ClanakViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand">
+                <Label Text="Naziv"></Label>
+                <Entry  x:Name="Naziv" Text="{ Binding Naziv}"></Entry>
+
+                <Label Text="Tekst"></Label>
+                <Entry  x:Name="Tekst" Text="{Binding Tekst}"></Entry>
+
+                <Label Text="Datum i vrijeme objave"></Label>
+                <DatePicker x:Name="DatumObjave" IsEnabled="True"></DatePicker> 
+                
+                <Label Text="Vrsta clanka"></Label>
+                <Picker x:Name="VrstaClankaPicker" ItemsSource="{Binding VrstaClankaList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+
+                <Button Clicked="Button_Clicked"  HorizontalOptions="FillAndExpand" Text="Sačuvaj" BackgroundColor="LightGray"></Button>
+                <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

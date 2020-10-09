@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             x:Class="Cookbook.MobileApp.Views.UrediReceptSastojke" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:UrediSastojakViewModel>
+        </viewModel:UrediSastojakViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>  <ScrollView>
+        <StackLayout Padding="20">
+         
+            <StackLayout>  
+                <Label Text="Mjerna jedinica"></Label>
+                <Picker x:Name="mjernajedinica" ItemsSource="{Binding MjernaJedinicaList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+                <Label Text="Mjerna kolicina"></Label>
+                <Picker x:Name="mjernakolicina" ItemsSource="{Binding MjernaKolicinaList}" ItemDisplayBinding="{Binding Kolicina}"></Picker>
+                <Label Text="Sastojak"></Label>
+                <Picker x:Name="sastojak" ItemsSource="{Binding SastojakList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Sačuvaj" Clicked="Button_Clicked"></Button>
+            </StackLayout>
+        </StackLayout> 
+    </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

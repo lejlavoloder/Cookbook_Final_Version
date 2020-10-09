@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Cookbook.MobileApp.Converter"
+            xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels" 
+             x:Class="Cookbook.MobileApp.Views.OdobriRecept"
+             Title="Upravljanje receptima" BackgroundColor="Ivory">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <viewModel:OdobriReceptViewModel>
+        </viewModel:OdobriReceptViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="30" >
+            <Label Text="Recepti" FontAttributes="Italic" Font="25" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+            <ListView ItemsSource="{Binding ReceptList}" RowHeight="550">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                      <Label Text="{Binding Naziv}" FontAttributes="Italic" FontSize="20" />
+                                <Image WidthRequest="300" HeightRequest="200"
+                                       Source="{Binding Slika, Converter={StaticResource imgConv}}" HorizontalOptions="CenterAndExpand"></Image>
+                                <StackLayout Padding="10">
+                                   <Label FontSize="16">Priprema</Label>
+                                    <Label Text="{Binding Tekst}" FontSize="14"  LineBreakMode="WordWrap" />
+                                    <Label Text="{Binding Korisnik, StringFormat='Napisao/la: {0}'}" FontSize="14" />
+                                    <Label Text="{Binding DatumObjave, StringFormat='Datum objave: {0}'}" FontSize="14" />
+                                    <Label Text="{Binding Odobren , StringFormat='Odobren: {0}'}" FontSize="14" />
+                                    <Button Clicked="Button_Clicked" Text="Odobri" IsVisible="{Binding NijeOdobreno}"
+                                    CornerRadius="7" HeightRequest="30" WidthRequest="60" Padding="3"  BackgroundColor="LightGray" 
+                                    HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

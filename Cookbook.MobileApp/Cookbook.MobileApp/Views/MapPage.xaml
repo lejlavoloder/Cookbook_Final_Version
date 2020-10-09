@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Cookbook.MobileApp.Views.MapPage" BackgroundColor="Ivory" Title="Naslovna">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+         <Label Margin="10" HorizontalOptions="Center" Text="O nama" FontAttributes="Italic" FontSize="25"></Label>
+            
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <StackLayout>
+<Label Margin="10" FontSize="Subtitle"
+       Text="Šta je Cookbook? Cookbook je naše rješenje za vaše muke s čuvanjem recepata."/>
+                        <Label FontSize="Subtitle" Margin="10"  Text="Došlo je vrijeme kada ste recepte čuvali po papirićima, bilježnicama ili u nekim zaboravljenim mapama na računalu. Kako bi oni sad bili na jednom mjestu, osmislili smo Cookbook osobnu kuharicu u kojoj su otisnuti svi vaši recepti.."/>
+                        <Label FontSize="Subtitle" Margin="10"  Text="Naravno, kako bi knjiga vaših recepata imala dodir s vašom osobnošću, urednički posao odlučili smo 
+           prepustiti vama. Potrebno je samo malo truda i vremena i vaši recepti će u vrlo kratkom vremenu ležati u personaliziranom Cookbook-u."/>
+                 </StackLayout>
+                </StackLayout>
+        </StackLayout>
+       </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

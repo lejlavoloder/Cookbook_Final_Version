@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:Cookbook.MobileApp.ViewModels"
+             xmlns:converters="clr-namespace:Cookbook.MobileApp.Converter"
+             x:Class="Cookbook.MobileApp.Views.LoginPage" BackgroundColor="Ivory">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" Padding="10" VerticalOptions="CenterAndExpand">
+
+            <Image WidthRequest="300" Source="c3.png"></Image>
+            <Label  Text="Korisničko ime"></Label>
+            <Entry x:Name="KorisnickoIme" Text="{Binding Username}"></Entry>
+
+            <Label  Text="Password"></Label>
+            <Entry Text="{Binding Password}" IsPassword="True"></Entry>
+
+            <Button Command="{Binding LoginCommand}"  HorizontalOptions="FillAndExpand" Text="Login"  BackgroundColor="LightGray"></Button>
+            <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+            <Button Text="Registriraj se" Clicked="Button_Clicked"  BackgroundColor="LightGray"
+                 HorizontalOptions="FillAndExpand"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

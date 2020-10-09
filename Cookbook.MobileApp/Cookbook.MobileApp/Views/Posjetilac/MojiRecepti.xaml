@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cookbook.MobileApp.Views.Posjetilac.MojiRecepti"
+             xmlns:viewModel="clr-namespace:Cookbook.MobileApp.ViewModels"
+             xmlns:converters="clr-namespace:Cookbook.MobileApp.Converter"
+             Title="Moji recepti" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModel:MojiReceptiViewModel>
+        </viewModel:MojiReceptiViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="30" >
+            <Label Text="Recepti" FontAttributes="Italic" Font="25" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+            <ListView ItemsSource="{Binding ReceptList}" RowHeight="250"  ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                                </Grid.ColumnDefinitions>
+
+                                <Image WidthRequest="220" HeightRequest="150"
+                                       Source="{Binding Slika, Converter={StaticResource imgConv}}"></Image>
+                                <StackLayout Grid.Column="1" Padding="10">
+                                    <Label Text="{Binding Naziv}" FontAttributes="Italic" FontSize="19" />
+                                    <Label Text="{Binding Slozenost, StringFormat='Složenost: {0}'}" FontSize="14"/>
+                                    <Label Text="{Binding Kategorija, StringFormat='Kategorija: {0}'}" FontSize="14" />
+                                    <Label Text="{Binding GrupaJela , StringFormat='Grupa jela: {0}'}" FontSize="14" />
+                                    <Button Text="Uredi recept" Clicked="Button_Clicked_3" BackgroundColor="LightGray" WidthRequest="60"></Button>
+                                    <Button Text="Obrisi" Clicked="Button_Clicked_4" BackgroundColor="LightGray" WidthRequest="60"></Button>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

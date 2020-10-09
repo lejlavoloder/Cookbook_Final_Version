@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cookbook.MobileApp.Views.Administracija" BackgroundColor="Ivory">
+    <ContentPage.Content Title="Administracija">
+        <ScrollView>
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand">
+                <StackLayout>
+                    <StackLayout>
+                        <Button Clicked="Button_Clicked" BackgroundColor="LightGray" Text="Upravljanje složenošću" ></Button>
+                    </StackLayout>
+                    <StackLayout>
+                        <Button Clicked="Button_Clicked_1" BackgroundColor="LightGray" Text="Upravljanje kategorijom" ></Button>
+                    </StackLayout>
+                    <StackLayout>
+                        <Button Clicked="Button_Clicked_2" BackgroundColor="LightGray" Text="Upravljanje grupom jela" ></Button>
+                    </StackLayout>
+                    <StackLayout>
+                        <Button Clicked="Button_Clicked_3" BackgroundColor="LightGray" Text="Upravljanje mjernom jedinicom" ></Button>
+                    </StackLayout>
+                    <StackLayout>
+                        <Button Clicked="Button_Clicked_4" BackgroundColor="LightGray" Text="Upravljanje mjernom količinom" ></Button>
+                    </StackLayout>
+                    <StackLayout>
+                        <Button Clicked="Button_Clicked_5" BackgroundColor="LightGray" Text="Upravljanje sastojcima" ></Button>
+                    </StackLayout>
+                    <StackLayout>
+                        <Button Clicked="Button_Clicked_6" BackgroundColor="LightGray" Text="Upravljanje vrstom članka" ></Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

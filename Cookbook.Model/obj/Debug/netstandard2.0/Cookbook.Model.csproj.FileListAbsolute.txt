@@ -1,0 +1,17 @@
+C:\Users\User\Source\Repos\Cookbook\Cookbook.Model\bin\Debug\netstandard2.0\Cookbook.Model.deps.json
+C:\Users\User\Source\Repos\Cookbook\Cookbook.Model\bin\Debug\netstandard2.0\Cookbook.Model.dll
+C:\Users\User\Source\Repos\Cookbook\Cookbook.Model\bin\Debug\netstandard2.0\Cookbook.Model.pdb
+C:\Users\User\Source\Repos\Cookbook\Cookbook.Model\obj\Debug\netstandard2.0\Cookbook.Model.csprojAssemblyReference.cache
+C:\Users\User\Source\Repos\Cookbook\Cookbook.Model\obj\Debug\netstandard2.0\Cookbook.Model.AssemblyInfoInputs.cache
+C:\Users\User\Source\Repos\Cookbook\Cookbook.Model\obj\Debug\netstandard2.0\Cookbook.Model.AssemblyInfo.cs
+C:\Users\User\Source\Repos\Cookbook\Cookbook.Model\obj\Debug\netstandard2.0\Cookbook.Model.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\Cookbook\Cookbook.Model\obj\Debug\netstandard2.0\Cookbook.Model.dll
+C:\Users\User\Source\Repos\Cookbook\Cookbook.Model\obj\Debug\netstandard2.0\Cookbook.Model.pdb
+C:\Users\User\Desktop\RS2_SeminarskiRad_Cookbook-master\Cookbook.Model\bin\Debug\netstandard2.0\Cookbook.Model.deps.json
+C:\Users\User\Desktop\RS2_SeminarskiRad_Cookbook-master\Cookbook.Model\bin\Debug\netstandard2.0\Cookbook.Model.dll
+C:\Users\User\Desktop\RS2_SeminarskiRad_Cookbook-master\Cookbook.Model\bin\Debug\netstandard2.0\Cookbook.Model.pdb
+C:\Users\User\Desktop\RS2_SeminarskiRad_Cookbook-master\Cookbook.Model\obj\Debug\netstandard2.0\Cookbook.Model.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\RS2_SeminarskiRad_Cookbook-master\Cookbook.Model\obj\Debug\netstandard2.0\Cookbook.Model.AssemblyInfo.cs
+C:\Users\User\Desktop\RS2_SeminarskiRad_Cookbook-master\Cookbook.Model\obj\Debug\netstandard2.0\Cookbook.Model.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\RS2_SeminarskiRad_Cookbook-master\Cookbook.Model\obj\Debug\netstandard2.0\Cookbook.Model.dll
+C:\Users\User\Desktop\RS2_SeminarskiRad_Cookbook-master\Cookbook.Model\obj\Debug\netstandard2.0\Cookbook.Model.pdb

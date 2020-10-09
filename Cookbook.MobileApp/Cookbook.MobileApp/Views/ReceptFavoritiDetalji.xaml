@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Cookbook.MobileApp.ViewModels"
+               xmlns:converters="clr-namespace:Cookbook.MobileApp.Converter"
+             x:Class="Cookbook.MobileApp.Views.ReceptFavoritiDetalji" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModels:ReceptFavoritiDetaljiViewModel>
+        </viewModels:ReceptFavoritiDetaljiViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout Padding="10" Orientation="Vertical" VerticalOptions="Center">
+                    <StackLayout Orientation="Horizontal">
+
+                        <Label Text="{Binding Naziv}" FontSize="20"  FontAttributes="Italic"
+                               HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+                        <Image WidthRequest="300" HeightRequest="350" Source="{Binding Slika, Converter={StaticResource imgConv}}"></Image>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Vrijeme kuhanja u minutama: "  FontSize="14" ></Label>
+                        <Label Text="{Binding VrijemeKuhanja}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Vrijeme pripreme u minutama: "  FontSize="14" ></Label>
+                        <Label Text="{Binding VrijemePripreme}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Broj ljudi: "  FontSize="14" ></Label>
+                        <Label Text="{Binding BrojLjudi}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Složenost: "  FontSize="14" ></Label>
+                        <Label Text="{Binding Slozenost}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Grupa jela: "  FontSize="14" ></Label>
+                        <Label Text="{Binding GrupaJela}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Kategorija: "  FontSize="14" ></Label>
+                        <Label Text="{Binding Kategorija}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                    </StackLayout>
+               
+                    <Label Text="Priprema:" FontSize="17" FontAttributes="Italic"></Label>
+                    <StackLayout Orientation="Horizontal">
+                      
+                        <Label Text="{Binding Tekst}" 
+                                           LineBreakMode="WordWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="14" />
+                    </StackLayout>
+                    <Label FontSize="17" FontAttributes="Italic">Sastojci:</Label>
+                    <ListView ItemsSource="{Binding ReceptSastojakList}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>    
+                                <StackLayout Padding="10" Orientation="Horizontal">
+                                            <StackLayout Orientation="Vertical">
+                                           <StackLayout>
+                                                <Label Text="{Binding MjernaKolicina}" 
+                                           LineBreakMode="NoWrap" 
+                                           FontSize="14" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout>
+                                                <Label Text="{Binding MjernaJedinica}" 
+                                           LineBreakMode="NoWrap" 
+                                           FontSize="14" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout>
+                                                <Label Text="{Binding Sastojak}" 
+                                           LineBreakMode="NoWrap" 
+                                           FontSize="14" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 

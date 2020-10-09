@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Cookbook.MobileApp.ViewModels"
+             x:Class="Cookbook.MobileApp.Views.PrikazKomentaraPage"
+             Title="Prikaz komentara" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <vm:PrikazKomentaraViewModel>
+        </vm:PrikazKomentaraViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding KomentarList}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Sadrzaj: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Sadrzaj}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Datum kreiranja: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Datum}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Recept: "  FontSize="12" ></Label>
+                                <Label Text="{Binding NazivRecepta}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Korisnik: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Posjetioc}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Odobren: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Odobreno}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+
+                            <Button Clicked="Button_Clicked_1" Text="Odobri" IsVisible="{Binding NijeOdobreno}"
+                                    CornerRadius="7" HeightRequest="30" WidthRequest="60" Padding="3"  BackgroundColor="LightGray" 
+                                    HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

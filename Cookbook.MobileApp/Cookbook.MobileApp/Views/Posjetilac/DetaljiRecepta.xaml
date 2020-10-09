@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Cookbook.MobileApp.ViewModels"
+             x:Class="Cookbook.MobileApp.Views.Posjetilac.DetaljiRecepta"
+             Title="Detalji recepta" BackgroundColor="Ivory">
+    <ContentPage.BindingContext>
+        <viewModels:ReceptDetaljiViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="{Binding Naziv}" FontAttributes="Bold" Font="25" HorizontalTextAlignment="Center" 
+                   HorizontalOptions="Center"></Label>
+            <Label Text="{Binding VrijemeKuhanja, StringFormat='Vrijeme kuhanja: {0} min'}" FontSize="14"></Label>
+            <Label Text="{Binding VrijemePripreme, StringFormat='Vrijeme pripreme: {0} min'}" FontSize="14"></Label>
+            <Label Text="{Binding BrojLjudi, StringFormat='Broj ljudi: {0}'}" FontSize="14"></Label>
+            <Label FontAttributes="Italic" Font="18">Priprema recepta:</Label>
+            <Label x:Name="Tekst" Text="{Binding Tekst}"  FontSize="15"></Label>
+            <Label FontAttributes="Italic" Font="18">Potrebni sastojci:</Label>
+            <ListView ItemsSource="{Binding ReceptSastojakList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout>
+                                        <Label Text="{Binding MjernaKolicina}" 
+                                           FontSize="14" />
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout>
+                                        <Label Text="{Binding MjernaJedinica}" 
+                                           FontSize="14" />
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout>
+                                        <Label Text="{Binding Sastojak}" 
+                                           FontSize="14" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label FontAttributes="Italic" Font="18">Komentari</Label>
+            <ListView ItemsSource="{Binding KomentarList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Sadrzaj}" FontAttributes="Italic" FontSize="14" />
+                                <Label Text="{Binding Posjetioc, StringFormat='Napisao/la: {0}'}" FontAttributes="Italic" FontSize="14" />
+                                <Label Text="{Binding Datum, StringFormat='Datum: {0}'}" FontAttributes="Italic"  FontSize="14"/>
+                                <BoxView HeightRequest="1" WidthRequest="100" BackgroundColor="Black"/>
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Clicked="Button_Clicked"  Text="Napiši komentar" CornerRadius="7" HeightRequest="30"
+                       WidthRequest="122" Padding="2" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
